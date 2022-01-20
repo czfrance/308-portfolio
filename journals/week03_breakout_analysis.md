@@ -1,6 +1,6 @@
 # Journal : Improvement Analysis
-#### NAME
-#### DATE
+#### Cynthia France
+#### 1/20/2022
 
 
 ## Planning
@@ -153,94 +153,170 @@
 
 ### Clean Code
 
-* Very Readable method
+* Very Readable method: moveBlocks()
     * Method's purpose
-
+      * To update the positions of all blocks in the game
     * What makes this method easy to read and understand
-
+      * This is the only thing that the function does. It's passed in a List of List of Blocks,
+        loops through the blocks and calls block.move() on all of them (given the block isn't null)
     * Why do you feel this method does (or not) embody the Single Responsibility Principle
-
+      * It embodies the Single Responsibility Principle because its only job is to move the Blocks.
+        Other than that, it doesn't do anything else.
     * How much did this method benefit (or not) from refactoring and how many "drafts" did it go through?
+      * It benefitted a bit from refactoring. Since the function itself is pretty simple, the only
+        real change I made was delegating the actual block moving to the Block class. When I first 
+        wrote the function, it was the function itself that called block.setX() and block.setY() 
+        instead of the block calling it on itself. 
 
-
-* Not very Readable method
+* Not very Readable method: destroyBlock
     * Method's purpose
-
+      * The method's purpose is to remove the block that was destroyed from root and set its value
+        to null. 
     * What could make this method easier to read and understand
-
+      * The first thing I should've done (not just in this function) was to not make the ``blocks``
+        an List of List of Blocks. I've just now realized that this was unnecessary, as I initially
+        drew the blocks from the file, and anything subsequent I would reloop through the list, thus
+        removing the need for a rigid grid-like structure of blocks (especially since the blocks move
+        around anyway, so even figuring out blocks that need to be effected for AOE power-ups don't
+        rely on this structure). That way, I could just pass in the block itself instead of its 
+        location in the List. I also wouldn't have to set the Block to null, and could instead just
+        remove it from the List.
+      * Another separate thing I would do is make an abstract method in the Block class that 
+        does whatever a block needs to do once it is destroyed (ie a special effect). That way, I
+        can just call block.doEffect (or something along those lines) instead of first checking if 
+        the block is one of the blocks with special effects and then calling the specific block 
+        function it's supposed to do if it is that type of Block. This would avoid the potential for
+        very long if statements that was mentioned in class.
     * Why do you feel this method does (or not) embody the Single Responsibility Principle
-
+      * It does not embody the Single Responsibility Principle. It does several things:
+        1. Set the block to null in the blocks List
+        2. Remove the block from root
+        3. Check if the block is of type A or B and if it is, then perform A's or B's special
+           function
+           * even within this check, one type of block could return 2 different things, which also
+             needs to be checked...
     * How much did this method benefit (or not) from refactoring and how many "drafts" did it go through?
-
+      * It benefitted a bit from refactoring. For instance, I delegated specific block tasks to 
+        that specific block, but now realize that there could've been more of that.
 
 
 ## Design
 
-* How to add a new level variation to the game
+### How to add a new level variation to the game
+Create ``.txt`` block map with the following format:
+* First line: 2 numbers, separated by space, of the size of the map: ``numCols`` ``numRows``
+* The next ``numRows`` rows: the actual block map, with the characters:
+  * ``0``: no block
+  * ``1``: snow block
+  * ``2``: wood block
+  * ``3``: brick block
+  * ``4``: concrete block
+  * ``5``: steel block
+  * ``A``: snow angel block
+  * ``B``: black ice block
+* blocks should be separated by a **space**
+* a newline character (just hit enter) should follow the last block in a row
+  * NO SPACES AFTER THE LAST BLOCK
+* Place file in the ``resources`` folder (``src/main/resources``)
+* Create a new constant with its file path (``src/main/resources/lvlName.txt``)
+* Update ``Main``'s ``NUM_LVLS`` CONSTANT
+* Add the new level to the ``getMap()`` function in ``Breakout.java``
+* Document this feature in the ``README`` markdown file
 
-* Where is your code not SHY (i.e., what dependencies exist between classes or methods)?
+### Where is your code not SHY (i.e., what dependencies exist between classes or methods)?
+* I'm not sure if this is an example, but in my SnowAngelBlock class, one of the functions is 
+  an effect that the block can have on other blocks. However instead of just figuring out which
+  blocks to effect, this block goes ahead and performs the effect as well, even though the list of 
+  block was passed into it.
 
 
 ### Trade-offs
 
 * Design issue that worked out
     * Describe the issue and the trade-offs you considered
-
+      * Issue: too many types of blocks and powers, my Block class was getting very messy
+      * I could either have very long methods that took care of every possibility, or many many
+        short methods.
     * What alternatives did you consider?
-
+      * Create a new class for each subtype of Block (with a power)
     * How did you eventually handle it?
-
+      * I created the sub classes
     * Are you satisfied with the final solution? Why or why not?
+      * Mostly! I think the subclasses were great, but I could've definitely made some Block 
+        methods abstract and thus streamline my main Breakout code.
 
 
 * Design issue that could still be improved on
     * Describe the issue and the trade-offs you considered
-
+      * Issue: wayyy too many images needed to be loaded in
+      * This involved many lines of setting image file paths, and then an equal obscene number of 
+        creating the Image objects. However, I needed these, otherwise I wouldn't be able to have
+        all the necessary images
     * What alternatives did you consider?
-
+      1. Create a class that takes care of all the images, loads, them, stores them, organizes them
+      2. dictate the file path and load the image/create the Image all in one go
     * How did you eventually handle it?
-
+      * I chose to create a new class.
     * Are you satisfied with the final solution? Why or why not?
-
+      * I'm not completely satisfied. Although now my code is organized better, I still think that 
+        new class is slightly dumb and should do more than just create images and return them on
+        request.
 
 ### Features
 
-* Feature that is well designed
-    * Classes, methods, or variables are required in the implementation this feature
+* Feature that is well-designed: 
+    * Classes, methods, or variables that are required in the implementation this feature
 
-    * Did the design of this feature change at all during its own implementation or with the implementation of a latter feature? Did its implementation change any earlier features?
+    * Did the design of this feature change at all during its own implementation or with the 
+      implementation of a latter feature? Did its implementation change any earlier features?
 
     * Why are you satisfied with your design?
 
     * Design details
         * What were your goals did you have (beyond simply making it work)?
 
-        * What assumptions did you make (to make it easier, etc.) and did they affect any other parts of the program?
+        * What assumptions did you make (to make it easier, etc.) and did they affect any other 
+          parts of the program?
 
         * Did it make implementing any future features easier (or was it made easier by an earlier feature)?
 
 
 
 * Feature that could be improved
-    * Classes, methods, or variables are required in the implementation this feature
+    * Classes, methods, or variables that are required in the implementation this feature
 
-    * Did the design of this feature change at all during its own implementation or with the implementation of a latter feature? Did its implementation change any earlier features?
+    * Did the design of this feature change at all during its own implementation or with the 
+      implementation of a latter feature? Did its implementation change any earlier features?
 
     * Why are you unsatisfied with your design?
 
     * Design details
         * What were your goals did you have (beyond simply making it work)?
 
-        * What assumptions did you make (to make it easier, etc.) and did they affect any other parts of the program?
+        * What assumptions did you make (to make it easier, etc.) and did they affect any other 
+          parts of the program?
 
-        * Did it make implementing any future features easier (or was it made easier by an earlier feature)?
+        * Did it make implementing any future features easier (or was it made easier by an earlier 
+          feature)?
 
 
 
 ## Conclusion
 
-* What kind of coding did you spend the most time on (e.g., debugging, writing features, refactoring, learning new tools/frameworks, or even just thinking)?
-
+* What kind of coding did you spend the most time on (e.g., debugging, writing features, 
+  refactoring, learning new tools/frameworks, or even just thinking)?
+  * I spent the most time on writing new features and refactoring the code.
+  * An Honorable Mention: figuring out how to switch between different screens
+  
 * What coding habits did this project make you want to change and/or convince you to keep?
-
-* How could you improve your overall coding process to make it more reliable, efficient, enjoyable, etc. in the future?
+  * I need to learn how to work in shorter periods of time and not be too picky on whether
+    I would be interrupted. I only wanted to work on the project when I had many hours consecutively,
+    so I would not start working until ~midnight and then stop at like 6am... oops...
+  * I also discovered that making a plan/brainstorming (aka part 1 of the project) is very helpful
+    and curbed some of my spontaneous tendencies
+  * I also need to commit more often when I finish smaller tasks/chunks of code
+  
+* How could you improve your overall coding process to make it more reliable, efficient, enjoyable, 
+  etc. in the future?
+  * I basically need to do everything that I highlighted above. That would greatly reduce the 
+    stress placed upon me. 
