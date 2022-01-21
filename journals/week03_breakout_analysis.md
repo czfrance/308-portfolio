@@ -264,40 +264,83 @@ Create ``.txt`` block map with the following format:
 
 ### Features
 
-* Feature that is well-designed: 
-    * Classes, methods, or variables that are required in the implementation this feature
-
+* Feature that is well-designed: Moving blocks
+    * Classes, methods, or variables that are required in the implementation of this feature
+      * ``Block``
+        * ``speed``: the base max speed of the block, a ``final``
+        * ``currSpeed``: the current base speed of the block (either ``speed`` or ``0``)
+        * ``speedFraction``: the fraction of ``currSpeed`` the block is actually travelling at
+        * ``angle``: the angle at which the block travels
+        * ``move()``: sets the new location of the block
+        * ``freeze()``: sets ``currSpeed = 0``
+        * ``unfreeze()``: sets ``currSpeed = speed``
+      * ``Breakout``
+        * ``BASE_BLOCK_SPEED``: dictates the base block speed of a block, is multiplied by the 
+          game level to set the base block speed for each level
+        * ``step()``: updates locations of all game elements, including the blocks
     * Did the design of this feature change at all during its own implementation or with the 
       implementation of a latter feature? Did its implementation change any earlier features?
-
+        * Yes. I had somewhat of a hard time deciding which classes should keep track of which parts
+          of the block information. For example, I initially had all things related to block speed 
+          in the ``Breakout`` class, but realized that it should probably belong to the ``Block`` 
+          class instead.
     * Why are you satisfied with your design?
-
+        * I am very happy with this design because I am confident I can change things about this 
+          feature/add new features that involve this feature without too much of a hassle. For 
+          example, the power-up winter freeze freezes all blocks in place for a certain amount
+          of time, and I was able to implement this without much difficulty.
     * Design details
         * What were your goals did you have (beyond simply making it work)?
-
+          * Originally, my goal was just to make the blocks move at a certain speed depending on the
+            level. However, as I began coding, I decided to make it fancier by starting the blocks
+            off at a slower speed and then gradually increasing their speed up to a certain maximum,
+            hence the ``speedFraction`` variable and its relation to ``currSpeed``.
         * What assumptions did you make (to make it easier, etc.) and did they affect any other 
           parts of the program?
-
-        * Did it make implementing any future features easier (or was it made easier by an earlier feature)?
-
-
-
-* Feature that could be improved
-    * Classes, methods, or variables that are required in the implementation this feature
-
-    * Did the design of this feature change at all during its own implementation or with the 
-      implementation of a latter feature? Did its implementation change any earlier features?
-
-    * Why are you unsatisfied with your design?
-
-    * Design details
-        * What were your goals did you have (beyond simply making it work)?
-
-        * What assumptions did you make (to make it easier, etc.) and did they affect any other 
-          parts of the program?
-
+          * I didn't make any assumptions about this-- maybe that the speed would depend on the level?
         * Did it make implementing any future features easier (or was it made easier by an earlier 
           feature)?
+          * Yes. As I talked about in "why am I satisfied", it made implementing one of my power-ups 
+            very easy, as everything relating to this feature was all consolidated in one place and
+            easy to keep track of.
+
+
+
+* Feature that could be improved: Slippery Paddle
+    * Classes, methods, or variables that are required in the implementation of this feature
+      * ``Ball``
+        * ``SLIP_ANGLE``: the additional angle that's added (from vertical) that the ball will 
+          travel
+        * ``slip()``: calculates & sets the new angle of the ball
+      * ``Paddle``
+        * ``slippery``: ``boolean``, whether paddle is slippery
+        * ``makeSlippery()``: set ``slippery`` to true
+        * ``isSlippery()``: returns ``slippery``
+      * ``Breakout``
+        * ``DISADVGS``: list of disadvantages, includes this feature
+        * ``slipperyPaddle()``: calls ``paddle.makeSlippery()``
+        * ``doDisAdv()``: calls ``slipperyPaddle(true)``
+        * ``stopDisAdv()``: calls ``slipperyPaddle(false)``
+    * Did the design of this feature change at all during its own implementation or with the 
+      implementation of a latter feature? Did its implementation change any earlier features?
+      * Yes. I changed the parameters of the feature after implementing another paddle feature.
+    * Why are you unsatisfied with your design?
+      * I think that it is present in too many part of my code. It's not consolidated at all and
+        a potential might have to result in changes in all of these parts, which is not ideal and
+        I may miss a part.
+    * Design details
+        * What your goals did you have (beyond simply making it work)?
+          * my goal was for the feature's affect to look convincing and make sense in relation
+            to my theme (winter).
+        * What assumptions did you make (to make it easier, etc.) and did they affect any other 
+          parts of the program?
+          * I randomly dictated the degree to which my feature would affect the game (in this case,
+            it was the additional angle at which the ball would travel in)
+        * Did it make implementing any future features easier (or was it made easier by an earlier 
+          feature)?
+          * Although I did not base any additional features on this feature, my guess is that 
+            it would've been pretty complicated to add an additional feature relating to this one,
+            since my code for its implementation is so spread out.
 
 
 
