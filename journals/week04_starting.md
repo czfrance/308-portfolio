@@ -8,7 +8,7 @@
 ### Initial impression of team
 I thought my team was very nice! Jose and Diane are both cool people seem willing to learn and put
 effort into their projects. However, I also got the feeling that they wouldn't be upset at leaving
-something half finished or a more basic version, which I'm not completely sure how I feel about.
+something half finished or a more basic version, which I'm slightly worried about.
 
 ### First team meeting experience
 Since the beginning, we've had trouble scheduling time to meet as a team. First we arranged for one
@@ -68,14 +68,31 @@ problems and different ideas for how to do things (that don't get resolved/talke
 
 ## Summaries (readings, code examples, design discussions, etc.)
 
-### Thing #1
+### CSS Stylesheets and Languages
+You can drastically change the look and feel of a window by keeping all button/object configurations
+in a stylesheets file and editing that. You can also create multiple sheets and use different styles
+for different purposes/occasions (ie different simulations). Similarly, you can easily toggle between
+languages by associating variables/labels(?) with text that you'd like to use. Then in separate language
+files, you can change the text to said language, and based on which one is used at runtime, the language
+displayed will be different.
 
-### Thing #2
-
+### MVC Structure
+The MVC (Model, View Controller) is an easy and good way to separate the back-end from the front-end 
+in a project. The purpose of this is so that the back-end (model) is completely unreliant on javafx and is
+just purely code, while the front-end (view) is purely display logic. They don't have to worry much
+about the specifics of things, which is what the controller (the in-between) takes care of. The 
+controller also communicates between the model and the view to pass along information & perform
+logic and checks.
 
 
 ## Feedback (mentoring, feedback, office hours, etc.)
 
-### Thing #1
+### How to divvy up team member responsibilities
+This is actually where I first learned that it'd be best to split up member responsibilities by
+MVC/XML structure. Kathleen went through how her team delegated responsibility taught me the best/suggested 
+way to do things. 
 
-### Thing #2
+### breakout + the rest of the semester
+Kathleen also spent so much time with me going over how to improve my breakout project and how to 
+succeed in the rest of the semester. For Breakout, she told me about how later in the class, we'll 
+learn about different ways to store data and pull it in instead of keeping it all in the file.
