@@ -218,27 +218,46 @@
 
 ### Remaining Design Checklist Issues
 
-* Issue #1
+* Issue #1: SketchbookView
+  * Although I was not the only one contributing to this class, we really let this class get way too big. 
+    It violates the single responsibility principle. If I had more
+    time, I'd refactor this code so that more classes are utilized, splitting up responsibility
+    in a way that makes sense (ie one for Animations, one for Turtle related functions, one for 
+    general view functions.)
 
-* Issue #2
-
-* Issue #3
+* Issue #2: Type-casting
+  * There were some instances where I type-casted to a certain object type. I should work on not 
+    relying on that. However, I think in some cases, this is acceptable, for example when I confirm
+    that an object is of that type.
 
 
 ### Abstraction
+* I created the Transitions/Paths and Rotations hierarchy. I think this was a good idea, since 
+  it made my code much more readable, understandable, and open to extension. Now, multiple paths
+  and rotations can be made from the parent classes I wrote.
 
+### Design Challenge: Turtle Instructions
 
-### Design Challenge
+* Alternate design #1: Reflections
+  * Use reflections to get the correct function for each turtle command
+  * The functions would be located in the same file as TurtleModel
 
-* Alternate design #1
-
-* Alternate design #2
+* Alternate design #2: Lambdas
+  * Use lambdas and BiFunctions to execute the turtle commands
 
 * Trade-offs
+  * Option #1 is much more straightforward and makes more sense conceptually, but it is not 
+    good design to keep all of the functions for the turtle in one place.
+  * Option #2 is good in terms of design regarding splitting things up into smaller chunks, but it
+    brings about other problems like circular dependencies
 
 * Justify your Preferred Solution
+  * My preferred solution is still Option 2. Even though it also has its flaws, I think the design
+    overall is very good.
 
 * Satisfaction with Chosen Solution
+  * I am satisfied with this solution, although I wish we had more time to maybe come up with a 
+    better solution that fixed the circular dependency issue.
 
 
 ### Code Design Review
@@ -246,23 +265,45 @@
 #### Good Example **you** implemented
 
 * Methods and Classes used
+  * Path
+    * MovementPath
+    * DoNothingPath
+  * TurtleModel
+  * TurtleView
+  * PathTransition
 
 * GIT commits
+  * All commits made by Cynthia France that mention "path" on March 5, 2022
+  * ie "Path abstract class", 2985f4249d43f23e84fd89372e80dd734c9e8094
 
 * Design
+  * In general, the class is open to extension, but closed to modification. As demonstrated, many
+    child classes regarding Paths can be made
+  * All functions relating to Paths (ie make TransitionPath) are encapsulated into
+    this class.
 
 * Evaluation
+  * In general, my abstractions follow the single responsibility principle, help to majorly
+    reduce the complexity of my code, and also allow for further extension.
+  * I think next time, I will focus more on distinguishing between subclasses and parent classes.
+    Sometimes it felt as if the lines were blurried
 
 
 #### Needs Improvement Example **you** implemented
 
 * Methods and Classes used
+  * SketchbookView
 
 * GIT commits
+  * Commits made by Cynthia and Thivya regarding the general view/sketchbook view 
+  * (sorry, there were wayyy too many of them)
 
 * Design
+  * Not much of this class is open to extension. It kind of just sits there.
+  * We make the assumption that all changes from the Model are correct.
 
 * Evaluation
+  * 
 
 
 #### API ***you*** designed
