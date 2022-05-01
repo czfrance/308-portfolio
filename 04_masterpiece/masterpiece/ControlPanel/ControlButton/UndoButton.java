@@ -1,0 +1,35 @@
+package oogasalad.engine.view.ControlPanel.ControlButton;
+
+/**
+ * The purpose of this class is to create and define the characteristics of the undo button, which
+ * undoes the previous moves made in the game. It inherits from ControlButton
+ *
+ * Note: Please see full explanation for good design in ControlButton.java
+ *
+ * This class demonstrates the "open to extension" part of the Single Responsibility Principle. As
+ * can be seen, the abstract ControlPanel class has been extended so that more specific panels can
+ * be made.
+ *
+ * GIT Commits:
+ * - All commits authored by Cynthia France that have "controlbutton" or "control button" in it:
+ *    - make ControlButton super class with subclasses for all Control Panel Buttons
+ *
+ * @author Cynthia France
+ * @see ControlButton, HomeButton, InfoButton, SaveButton, RestartButton, SettingsButton, PauseButton
+ */
+public class UndoButton extends ControlButton {
+
+  /**
+   *
+   * creates and defines the characteristics of the undo button, which undoes the previous moves made in the game.
+   *
+   * @param language user-specified language in which the UI is displayed in
+   * @param setUndo Runnable that defines how the undo button behaves when clicked
+   */
+  public UndoButton(String language, Runnable setUndo) {
+    super(language);
+    imagePath = IMAGES_FOLDER + imBundle.getString("Back");
+    createButton();
+    setAction(setUndo);
+  }
+}
