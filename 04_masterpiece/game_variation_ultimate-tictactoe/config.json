@@ -1,0 +1,2954 @@
+{
+    "pieces": [
+        {
+            "image": "/resources/xLose.png",
+            "name": "XLose",
+            "id": 6,
+            "player": 1
+        },
+        {
+            "image": "/resources/xDraw.png",
+            "name": "XDraw",
+            "id": 3,
+            "player": 0
+        },
+        {
+            "image": "/resources/x.png",
+            "name": "X",
+            "id": 0,
+            "player": 0
+        },
+        {
+            "image": "/resources/oWin.png",
+            "name": "OWin",
+            "id": 5,
+            "player": 1
+        },
+        {
+            "image": "/resources/oLose.png",
+            "name": "OLose",
+            "id": 2,
+            "player": 0
+        },
+        {
+            "image": "/resources/oDraw.png",
+            "name": "ODraw",
+            "id": 7,
+            "player": 1
+        },
+        {
+            "image": "/resources/xWin.png",
+            "name": "XWin",
+            "id": 1,
+            "player": 0
+        },
+        {
+            "image": "/resources/o.png",
+            "name": "O",
+            "id": 4,
+            "player": 1
+        }
+    ],
+    "metadata": {
+        "gameName": "Ultimate Tic Tac Toe",
+        "author": "Cynthia France",
+        "name": "metadata",
+        "description": "A game of Tic Tac Toe in Tic Tac Toe"
+    },
+    "winDecisions": [
+        {
+            "name": "O pos diag win",
+            "id": 1,
+            "conditions": ["O entire pos diag win"],
+            "type": "PlayerWins"
+        },
+        {
+            "name": "X neg diag win",
+            "id": 0,
+            "conditions": ["X entire neg diag win"],
+            "type": "PlayerWins"
+        },
+        {
+            "name": "O col win",
+            "id": 1,
+            "type": "PlayerWins",
+            "conditions": ["O entire col win"]
+        },
+        {
+            "name": "X col win",
+            "id": 0,
+            "type": "PlayerWins",
+            "conditions": ["X entire col win"]
+        },
+        {
+            "name": "O row win",
+            "id": 1,
+            "type": "PlayerWins",
+            "conditions": ["O entire row win"]
+        },
+        {
+            "name": "X row win",
+            "id": 0,
+            "type": "PlayerWins",
+            "conditions": ["X entire row win"]
+        },
+        {
+            "name": "O neg diag win",
+            "id": 1,
+            "type": "PlayerWins",
+            "conditions": ["O entire neg diag win"]
+        },
+        {
+            "name": "X pos diag win",
+            "id": 0,
+            "type": "PlayerWins",
+            "conditions": ["X entire pos diag win"]
+        }
+    ],
+    "rules": [
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 66",
+            "conditions": ["X row 66"],
+            "actions": [
+                "X Win 22 O horiz",
+                "X Win 22 O vert",
+                "X Win 22 neg diag",
+                "X Win 22 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 34",
+            "conditions": ["O row 34"],
+            "actions": [
+                "O Win 11 X horiz",
+                "O Win 11 X vert",
+                "O Win 11 neg diag",
+                "O Win 11 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 65",
+            "conditions": ["X row 65"],
+            "actions": [
+                "X Win 21 O horiz",
+                "X Win 21 O vert",
+                "X Win 21 neg diag",
+                "X Win 21 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 33",
+            "conditions": ["O row 33"],
+            "actions": [
+                "O Win 11 X horiz",
+                "O Win 11 X vert",
+                "O Win 11 neg diag",
+                "O Win 11 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 68",
+            "conditions": ["X row 68"],
+            "actions": [
+                "X Win 22 O horiz",
+                "X Win 22 O vert",
+                "X Win 22 neg diag",
+                "X Win 22 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 36",
+            "conditions": ["O row 36"],
+            "actions": [
+                "O Win 12 X horiz",
+                "O Win 12 X vert",
+                "O Win 12 neg diag",
+                "O Win 12 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 67",
+            "conditions": ["X row 67"],
+            "actions": [
+                "X Win 22 O horiz",
+                "X Win 22 O vert",
+                "X Win 22 neg diag",
+                "X Win 22 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 35",
+            "conditions": ["O row 35"],
+            "actions": [
+                "O Win 11 X horiz",
+                "O Win 11 X vert",
+                "O Win 11 neg diag",
+                "O Win 11 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 38",
+            "conditions": ["O row 38"],
+            "actions": [
+                "O Win 12 X horiz",
+                "O Win 12 X vert",
+                "O Win 12 neg diag",
+                "O Win 12 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 37",
+            "conditions": ["O row 37"],
+            "actions": [
+                "O Win 12 X horiz",
+                "O Win 12 X vert",
+                "O Win 12 neg diag",
+                "O Win 12 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 30",
+            "conditions": ["O row 30"],
+            "actions": [
+                "O Win 10 X horiz",
+                "O Win 10 X vert",
+                "O Win 10 neg diag",
+                "X Win 10 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 32",
+            "conditions": ["O row 32"],
+            "actions": [
+                "O Win 10 X horiz",
+                "O Win 10 X vert",
+                "O Win 10 neg diag",
+                "O Win 10 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 31",
+            "conditions": ["O row 31"],
+            "actions": [
+                "O Win 10 X horiz",
+                "O Win 10 X vert",
+                "O Win 10 neg diag",
+                "O Win 10 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 31",
+            "conditions": ["X row 31"],
+            "actions": [
+                "X Win 10 O horiz",
+                "X Win 10 O vert",
+                "X Win 10 neg diag",
+                "X Win 10 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 30",
+            "conditions": ["X row 30"],
+            "actions": [
+                "X Win 10 O horiz",
+                "X Win 10 O vert",
+                "X Win 10 neg diag",
+                "X Win 10 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 67",
+            "conditions": ["O row 67"],
+            "actions": [
+                "O Win 22 X horiz",
+                "O Win 22 X vert",
+                "O Win 22 neg diag",
+                "O Win 22 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 66",
+            "conditions": ["O row 66"],
+            "actions": [
+                "O Win 22 X horiz",
+                "O Win 22 X vert",
+                "O Win 22 neg diag",
+                "O Win 22 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 68",
+            "conditions": ["O row 68"],
+            "actions": [
+                "O Win 22 X horiz",
+                "O Win 22 X vert",
+                "O Win 22 neg diag",
+                "O Win 22 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 61",
+            "conditions": ["O row 61"],
+            "actions": [
+                "O Win 20 X horiz",
+                "O Win 20 X vert",
+                "O Win 20 neg diag",
+                "O Win 20 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 60",
+            "conditions": ["O row 60"],
+            "actions": [
+                "O Win 20 X horiz",
+                "O Win 20 X vert",
+                "O Win 20 neg diag",
+                "O Win 20 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 63",
+            "conditions": ["O row 63"],
+            "actions": [
+                "O Win 21 X horiz",
+                "O Win 21 X vert",
+                "O Win 21 neg diag",
+                "O Win 21 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 62",
+            "conditions": ["O row 62"],
+            "actions": [
+                "O Win 20 X horiz",
+                "O Win 20 X vert",
+                "O Win 20 neg diag",
+                "O Win 20 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 65",
+            "conditions": ["O row 65"],
+            "actions": [
+                "O Win 21 X horiz",
+                "O Win 21 X vert",
+                "O Win 21 neg diag",
+                "O Win 21 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 64",
+            "conditions": ["O row 64"],
+            "actions": [
+                "O Win 21 X horiz",
+                "O Win 21 X vert",
+                "O Win 21 neg diag",
+                "O Win 21 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 0,
+            "name": "Place X on X turn",
+            "conditions": [
+                "X turn",
+                "isEmpty"
+            ],
+            "actions": ["PlaceX"]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 60",
+            "conditions": ["X row 60"],
+            "actions": [
+                "X Win 20 O horiz",
+                "X Win 20 O vert",
+                "X Win 20 neg diag",
+                "X Win 20 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 62",
+            "conditions": ["X row 62"],
+            "actions": [
+                "X Win 20 O horiz",
+                "X Win 20 O vert",
+                "X Win 20 neg diag",
+                "X Win 20 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 61",
+            "conditions": ["X row 61"],
+            "actions": [
+                "X Win 20 O horiz",
+                "X Win 20 O vert",
+                "X Win 20 neg diag",
+                "X Win 20 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 64",
+            "conditions": ["X row 64"],
+            "actions": [
+                "X Win 21 O horiz",
+                "X Win 21 O vert",
+                "X Win 21 neg diag",
+                "X Win 21 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 63",
+            "conditions": ["X row 63"],
+            "actions": [
+                "X Win 21 O horiz",
+                "X Win 21 O vert",
+                "X Win 21 neg diag",
+                "X Win 21 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 00",
+            "conditions": ["X row 00"],
+            "actions": [
+                "X Win 00 O horiz",
+                "X Win 00 O vert",
+                "X Win 00 neg diag",
+                "X Win 00 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 02",
+            "conditions": ["X row 02"],
+            "actions": [
+                "X Win 00 O horiz",
+                "X Win 00 O vert",
+                "X Win 00 neg diag",
+                "X Win 00 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 01",
+            "conditions": ["X row 01"],
+            "actions": [
+                "X Win 00 O horiz",
+                "X Win 00 O vert",
+                "X Win 00 neg diag",
+                "X Win 00 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 04",
+            "conditions": ["X row 04"],
+            "actions": [
+                "X Win 01 O horiz",
+                "X Win 01 O vert",
+                "X Win 01 neg diag",
+                "X Win 01 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 03",
+            "conditions": ["X row 03"],
+            "actions": [
+                "X Win 01 O horiz",
+                "X Win 01 O vert",
+                "X Win 01 neg diag",
+                "X Win 01 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 06",
+            "conditions": ["X row 06"],
+            "actions": [
+                "X Win 02 O horiz",
+                "X Win 02 O vert",
+                "X Win 02 neg diag",
+                "X Win 02 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 05",
+            "conditions": ["X row 05"],
+            "actions": [
+                "X Win 01 O horiz",
+                "X Win 01 O vert",
+                "X Win 01 neg diag",
+                "X Win 01 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 08",
+            "conditions": ["X row 08"],
+            "actions": [
+                "X Win 02 O horiz",
+                "X Win 02 O vert",
+                "X Win 02 neg diag",
+                "X Win 02 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 07",
+            "conditions": ["X row 07"],
+            "actions": [
+                "X Win 02 O horiz",
+                "X Win 02 O vert",
+                "X Win 02 neg diag",
+                "X Win 02 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 08",
+            "conditions": ["O row 08"],
+            "actions": [
+                "O Win 02 X horiz",
+                "O Win 02 X vert",
+                "O Win 02 neg diag",
+                "O Win 02 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 33",
+            "conditions": ["X row 33"],
+            "actions": [
+                "X Win 11 O horiz",
+                "X Win 11 O vert",
+                "X Win 11 neg diag",
+                "X Win 11 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 01",
+            "conditions": ["O row 01"],
+            "actions": [
+                "O Win 00 X horiz",
+                "O Win 00 X vert",
+                "O Win 00 neg diag",
+                "O Win 00 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 32",
+            "conditions": ["X row 32"],
+            "actions": [
+                "X Win 10 O horiz",
+                "X Win 10 O vert",
+                "X Win 10 neg diag",
+                "X Win 10 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 00",
+            "conditions": ["O row 00"],
+            "actions": [
+                "O Win 00 X horiz",
+                "O Win 00 X vert",
+                "O Win 00 neg diag",
+                "O Win 00 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 35",
+            "conditions": ["X row 35"],
+            "actions": [
+                "X Win 11 O horiz",
+                "X Win 11 O vert",
+                "X Win 11 neg diag",
+                "X Win 11 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 03",
+            "conditions": ["O row 03"],
+            "actions": [
+                "O Win 01 X horiz",
+                "O Win 01 X vert",
+                "O Win 01 neg diag",
+                "O Win 01 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 34",
+            "conditions": ["X row 34"],
+            "actions": [
+                "X Win 11 O horiz",
+                "X Win 11 O vert",
+                "X Win 11 neg diag",
+                "X Win 11 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 02",
+            "conditions": ["O row 02"],
+            "actions": [
+                "O Win 00 X horiz",
+                "O Win 00 X vert",
+                "O Win 00 neg diag",
+                "O Win 00 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 37",
+            "conditions": ["X row 37"],
+            "actions": [
+                "X Win 12 O horiz",
+                "X Win 12 O vert",
+                "X Win 12 neg diag",
+                "X Win 12 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 05",
+            "conditions": ["O row 05"],
+            "actions": [
+                "O Win 01 X horiz",
+                "O Win 01 X vert",
+                "O Win 01 neg diag",
+                "O Win 01 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 36",
+            "conditions": ["X row 36"],
+            "actions": [
+                "X Win 12 O horiz",
+                "X Win 12 O vert",
+                "X Win 12 neg diag",
+                "X Win 12 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 04",
+            "conditions": ["O row 04"],
+            "actions": [
+                "O Win 01 X horiz",
+                "O Win 01 X vert",
+                "O Win 01 neg diag",
+                "O Win 01 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 07",
+            "conditions": ["O row 07"],
+            "actions": [
+                "O Win 02 X horiz",
+                "O Win 02 X vert",
+                "O Win 02 neg diag",
+                "O Win 02 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 38",
+            "conditions": ["X row 38"],
+            "actions": [
+                "X Win 12 O horiz",
+                "X Win 12 O vert",
+                "X Win 12 neg diag",
+                "X Win 12 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 06",
+            "conditions": ["O row 06"],
+            "actions": [
+                "O Win 02 X horiz",
+                "O Win 02 X vert",
+                "O Win 02 neg diag",
+                "O Win 02 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 0,
+            "name": "Place O on O turn",
+            "conditions": [
+                "O turn",
+                "isEmpty"
+            ],
+            "actions": ["PlaceO"]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 00 pos diag",
+            "conditions": ["O 00 pos diag"],
+            "actions": [
+                "O Win 00 X horiz",
+                "O Win 00 X vert",
+                "O Win 00 neg diag",
+                "O Win 00 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 11 neg diag",
+            "conditions": ["O 11 neg diag"],
+            "actions": [
+                "O Win 11 X horiz",
+                "O Win 11 X vert",
+                "O Win 11 neg diag",
+                "O Win 11 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 88 col",
+            "conditions": ["O col 88"],
+            "actions": [
+                "O Win 22 X horiz",
+                "O Win 22 X vert",
+                "O Win 22 neg diag",
+                "O Win 22 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 18 col",
+            "conditions": ["O col 18"],
+            "actions": [
+                "O Win 02 X horiz",
+                "O Win 02 X vert",
+                "O Win 02 neg diag",
+                "O Win 02 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "O wins 20 pos diag",
+            "conditions": ["O 20 pos diag"],
+            "actions": [
+                "O Win 20 X horiz",
+                "O Win 20 X vert",
+                "O Win 20 neg diag",
+                "O Win 20 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 00 pos diag",
+            "conditions": ["X 00 pos diag"],
+            "actions": [
+                "X Win 00 O horiz",
+                "X Win 00 O vert",
+                "X Win 00 neg diag",
+                "X Win 00 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 11 neg diag",
+            "conditions": ["X 11 neg diag"],
+            "actions": [
+                "X Win 11 O horiz",
+                "X Win 11 O vert",
+                "X Win 11 neg diag",
+                "X Win 11 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 88 col",
+            "conditions": ["X col 88"],
+            "actions": [
+                "X Win 22 O horiz",
+                "X Win 22 O vert",
+                "X Win 22 neg diag",
+                "X Win 22 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 18 col",
+            "conditions": ["X col 18"],
+            "actions": [
+                "X Win 02 O horiz",
+                "X Win 02 O vert",
+                "X Win 02 neg diag",
+                "X Win 02 pos diag"
+            ]
+        },
+        {
+            "representativeX": 0,
+            "representativeY": 0,
+            "isPersistent": 1,
+            "name": "X wins 20 pos diag",
+            "conditions": ["X 20 pos diag"],
+            "actions": [
+                "X Win 20 O horiz",
+                "X Win 20 O vert",
+                "X Win 20 neg diag",
+                "X Win 20 pos diag"
+            ]
+        }
+    ],
+    "conditions": [
+        {
+            "startRow": 2,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "X row 62",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 3,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "X row 63",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 0,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "X row 60",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 1,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "X row 61",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 6,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "X row 66",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 7,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "X row 67",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 4,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "X row 64",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 5,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "X row 65",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 0,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 9,
+            "name": "O entire row win",
+            "isAbsolute": 0,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 0,
+            "invert": 0,
+            "columnDirection": 0,
+            "startColumn": 0,
+            "length": 9,
+            "name": "X entire col win",
+            "isAbsolute": 0,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 1
+        },
+        {
+            "invert": 0,
+            "startRow": 8,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "X row 68",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 0,
+            "invert": 0,
+            "columnDirection": -1,
+            "startColumn": 0,
+            "length": 9,
+            "name": "O entire neg diag win",
+            "isAbsolute": 0,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 1
+        },
+        {
+            "startRow": 0,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 9,
+            "name": "O entire pos diag win",
+            "isAbsolute": 0,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 1
+        },
+        {
+            "startRow": 0,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "X row 30",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 3,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "X row 33",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 4,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "X row 34",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 1,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "X row 31",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "invert": 0,
+            "startRow": 8,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "O row 68",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 2,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "X row 32",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 7,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "O row 67",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 6,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "O row 66",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 5,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "O row 65",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 4,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "O row 64",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 3,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "O row 63",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 2,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "O row 62",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 1,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "O row 61",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 0,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "O row 60",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 7,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "X row 37",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "invert": 0,
+            "startRow": 8,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "X row 38",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 5,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "X row 35",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 6,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "X row 36",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "invert": 0,
+            "startRow": 8,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "O row 38",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 0,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "X row 00",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 7,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "O row 37",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 1,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "X row 01",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 6,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "O row 36",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 5,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "O row 35",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 4,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "O row 34",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 0,
+            "invert": 0,
+            "columnDirection": 0,
+            "startColumn": 0,
+            "length": 9,
+            "name": "O entire col win",
+            "isAbsolute": 0,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 1
+        },
+        {
+            "startRow": 3,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "O row 33",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 2,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "O row 32",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 1,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "O row 31",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 0,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "O row 30",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 4,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "X row 04",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 5,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "X row 05",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 2,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "X row 02",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 3,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "X row 03",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "invert": 0,
+            "startRow": 8,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "X row 08",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 0,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 9,
+            "name": "X entire row win",
+            "isAbsolute": 0,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 6,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "X row 06",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 7,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "X row 07",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "invert": 0,
+            "startRow": 8,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "O row 08",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 7,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "O row 07",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 6,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "O row 06",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 5,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "O row 05",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 4,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "O row 04",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 3,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "O row 03",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "invert": 0,
+            "name": "X turn",
+            "id": 0,
+            "type": "IsPlayer"
+        },
+        {
+            "invert": 0,
+            "name": "O turn",
+            "id": 1,
+            "type": "IsPlayer"
+        },
+        {
+            "startRow": 2,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "O row 02",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 1,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "O row 01",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "col": 0,
+            "invert": 0,
+            "name": "isEmpty",
+            "isAbsolute": 0,
+            "row": 0,
+            "type": "IsEmpty"
+        },
+        {
+            "startRow": 0,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "O row 00",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 0,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "O 00 pos diag",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 1
+        },
+        {
+            "startRow": 0,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 3,
+            "name": "X 00 pos diag",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 1
+        },
+        {
+            "startRow": 0,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "O 20 pos diag",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": 1
+        },
+        {
+            "startRow": 0,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 6,
+            "length": 3,
+            "name": "X 20 pos diag",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 1
+        },
+        {
+            "startRow": 5,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "O 11 neg diag",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": -1
+        },
+        {
+            "startRow": 5,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 3,
+            "length": 3,
+            "name": "X 11 neg diag",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": -1
+        },
+        {
+            "startRow": 8,
+            "invert": 0,
+            "columnDirection": 0,
+            "startColumn": 8,
+            "length": 3,
+            "name": "X col 88",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": -1
+        },
+        {
+            "startRow": 8,
+            "invert": 0,
+            "columnDirection": 0,
+            "startColumn": 8,
+            "length": 3,
+            "name": "O col 88",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": -1
+        },
+        {
+            "startRow": 8,
+            "invert": 0,
+            "columnDirection": 0,
+            "startColumn": 1,
+            "length": 3,
+            "name": "X col 18",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": -1
+        },
+        {
+            "startRow": 8,
+            "invert": 0,
+            "columnDirection": 0,
+            "startColumn": 1,
+            "length": 3,
+            "name": "O col 18",
+            "isAbsolute": 1,
+            "type": "IsPlayerPieceRay",
+            "player": 1,
+            "rowDirection": -1
+        },
+        {
+            "startRow": 0,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 9,
+            "name": "X row win",
+            "isAbsolute": 0,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 0
+        },
+        {
+            "startRow": 0,
+            "invert": 0,
+            "columnDirection": 1,
+            "startColumn": 0,
+            "length": 9,
+            "name": "X entire pos diag win",
+            "isAbsolute": 0,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 1
+        },
+        {
+            "startRow": 0,
+            "invert": 0,
+            "columnDirection": -1,
+            "startColumn": 0,
+            "length": 9,
+            "name": "X entire neg diag win",
+            "isAbsolute": 0,
+            "type": "IsPlayerPieceRay",
+            "player": 0,
+            "rowDirection": 1
+        }
+    ],
+    "actions": [
+        {
+            "directionRow": 0,
+            "sourceCol": 0,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 01 X horiz",
+            "isAbsolute": 1,
+            "sourceRow": 4,
+            "id": 6,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": 1,
+            "sourceCol": 6,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 20 pos diag",
+            "isAbsolute": 1,
+            "id": 1,
+            "sourceRow": 0,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 6,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 20 neg diag",
+            "isAbsolute": 1,
+            "id": 1,
+            "sourceRow": 2,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 4,
+            "directionCol": 0,
+            "length": 3,
+            "name": "X Win 10 O vert",
+            "isAbsolute": 1,
+            "id": 2,
+            "sourceRow": 2,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 4,
+            "directionCol": 0,
+            "length": 3,
+            "name": "X Win 11 O vert",
+            "isAbsolute": 1,
+            "id": 2,
+            "sourceRow": 5,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": 0,
+            "sourceCol": 0,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 01 O horiz",
+            "isAbsolute": 1,
+            "id": 2,
+            "sourceRow": 4,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 0,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 02 neg diag",
+            "isAbsolute": 1,
+            "id": 1,
+            "sourceRow": 8,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": 1,
+            "sourceCol": 0,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 02 pos diag",
+            "isAbsolute": 1,
+            "id": 1,
+            "sourceRow": 6,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": 1,
+            "sourceCol": 6,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 20 pos diag",
+            "isAbsolute": 1,
+            "sourceRow": 0,
+            "id": 5,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 6,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 20 neg diag",
+            "isAbsolute": 1,
+            "sourceRow": 2,
+            "id": 5,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 3,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 11 neg diag",
+            "isAbsolute": 1,
+            "id": 1,
+            "sourceRow": 5,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": 1,
+            "sourceCol": 3,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 11 pos diag",
+            "isAbsolute": 1,
+            "id": 1,
+            "sourceRow": 3,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": 1,
+            "sourceCol": 3,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 11 pos diag",
+            "isAbsolute": 1,
+            "sourceRow": 3,
+            "id": 5,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": 0,
+            "sourceCol": 3,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 12 O horiz",
+            "isAbsolute": 1,
+            "id": 2,
+            "sourceRow": 7,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 1,
+            "directionCol": 0,
+            "length": 3,
+            "name": "O Win 00 X vert",
+            "isAbsolute": 1,
+            "id": 6,
+            "sourceRow": 2,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": 0,
+            "sourceCol": 6,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 20 X horiz",
+            "isAbsolute": 1,
+            "id": 6,
+            "sourceRow": 1,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": 1,
+            "sourceCol": 0,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 02 pos diag",
+            "isAbsolute": 1,
+            "sourceRow": 6,
+            "id": 5,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 1,
+            "directionCol": 0,
+            "length": 3,
+            "name": "O Win 01 X vert",
+            "isAbsolute": 1,
+            "sourceRow": 5,
+            "id": 6,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": 1,
+            "sourceCol": 3,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 10 pos diag",
+            "isAbsolute": 1,
+            "id": 1,
+            "sourceRow": 0,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 4,
+            "directionCol": 0,
+            "length": 3,
+            "name": "O Win 10 X vert",
+            "isAbsolute": 1,
+            "id": 6,
+            "sourceRow": 2,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 3,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 11 neg diag",
+            "isAbsolute": 1,
+            "sourceRow": 5,
+            "id": 5,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 4,
+            "directionCol": 0,
+            "length": 3,
+            "name": "O Win 12 X vert",
+            "isAbsolute": 1,
+            "sourceRow": 8,
+            "id": 6,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 6,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 22 neg diag",
+            "isAbsolute": 1,
+            "sourceRow": 8,
+            "id": 5,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 6,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 22 neg diag",
+            "isAbsolute": 1,
+            "id": 1,
+            "sourceRow": 8,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": 1,
+            "sourceCol": 6,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 22 pos diag",
+            "isAbsolute": 1,
+            "id": 1,
+            "sourceRow": 6,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": 0,
+            "sourceCol": 3,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 11 O horiz",
+            "isAbsolute": 1,
+            "id": 2,
+            "sourceRow": 4,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": 1,
+            "sourceCol": 6,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 22 pos diag",
+            "isAbsolute": 1,
+            "sourceRow": 6,
+            "id": 5,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 7,
+            "directionCol": 0,
+            "length": 3,
+            "name": "O Win 21 X vert",
+            "isAbsolute": 1,
+            "sourceRow": 5,
+            "id": 6,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 6,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 21 neg diag",
+            "isAbsolute": 1,
+            "id": 1,
+            "sourceRow": 5,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": 0,
+            "sourceCol": 6,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 21 O horiz",
+            "isAbsolute": 1,
+            "id": 2,
+            "sourceRow": 4,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 3,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 10 neg diag",
+            "isAbsolute": 1,
+            "sourceRow": 2,
+            "id": 5,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": 1,
+            "sourceCol": 3,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 10 pos diag",
+            "isAbsolute": 1,
+            "sourceRow": 0,
+            "id": 5,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 7,
+            "directionCol": 0,
+            "length": 3,
+            "name": "X Win 21 O vert",
+            "isAbsolute": 1,
+            "id": 2,
+            "sourceRow": 5,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 4,
+            "directionCol": 0,
+            "length": 3,
+            "name": "X Win 12 O vert",
+            "isAbsolute": 1,
+            "id": 2,
+            "sourceRow": 8,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": 1,
+            "sourceCol": 6,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 21 pos diag",
+            "isAbsolute": 1,
+            "id": 1,
+            "sourceRow": 3,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": 1,
+            "sourceCol": 6,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 21 pos diag",
+            "isAbsolute": 1,
+            "sourceRow": 3,
+            "id": 5,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": 0,
+            "sourceCol": 3,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 11 X horiz",
+            "isAbsolute": 1,
+            "sourceRow": 4,
+            "id": 6,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 3,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 10 neg diag",
+            "isAbsolute": 1,
+            "id": 1,
+            "sourceRow": 2,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 6,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 21 neg diag",
+            "isAbsolute": 1,
+            "sourceRow": 5,
+            "id": 5,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": 0,
+            "sourceCol": 0,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 02 X horiz",
+            "isAbsolute": 1,
+            "sourceRow": 7,
+            "id": 6,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 0,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 00 neg diag",
+            "isAbsolute": 1,
+            "id": 1,
+            "sourceRow": 2,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": 1,
+            "sourceCol": 3,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 12 pos diag",
+            "isAbsolute": 1,
+            "sourceRow": 6,
+            "id": 5,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 1,
+            "directionCol": 0,
+            "length": 3,
+            "name": "X Win 02 O vert",
+            "isAbsolute": 1,
+            "id": 2,
+            "sourceRow": 8,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 1,
+            "directionCol": 0,
+            "length": 3,
+            "name": "X Win 00 O vert",
+            "isAbsolute": 1,
+            "id": 2,
+            "sourceRow": 2,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 3,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 12 neg diag",
+            "isAbsolute": 1,
+            "id": 1,
+            "sourceRow": 8,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 3,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 12 neg diag",
+            "isAbsolute": 1,
+            "sourceRow": 8,
+            "id": 5,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": 1,
+            "sourceCol": 0,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 00 pos diag",
+            "isAbsolute": 1,
+            "id": 1,
+            "sourceRow": 0,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 1,
+            "directionCol": 0,
+            "length": 3,
+            "name": "X Win 01 O vert",
+            "isAbsolute": 1,
+            "id": 2,
+            "sourceRow": 5,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": 0,
+            "sourceCol": 0,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 02 O horiz",
+            "isAbsolute": 1,
+            "id": 2,
+            "sourceRow": 7,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": 1,
+            "sourceCol": 0,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 00 pos diag",
+            "isAbsolute": 1,
+            "sourceRow": 0,
+            "id": 5,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": 0,
+            "sourceCol": 0,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 00 X horiz",
+            "isAbsolute": 1,
+            "id": 6,
+            "sourceRow": 1,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": 0,
+            "sourceCol": 6,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 21 X horiz",
+            "isAbsolute": 1,
+            "sourceRow": 4,
+            "id": 6,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 0,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 00 neg diag",
+            "isAbsolute": 1,
+            "sourceRow": 2,
+            "id": 5,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": 0,
+            "sourceCol": 0,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 00 O horiz",
+            "isAbsolute": 1,
+            "id": 2,
+            "sourceRow": 1,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 4,
+            "directionCol": 0,
+            "length": 3,
+            "name": "O Win 11 X vert",
+            "isAbsolute": 1,
+            "sourceRow": 5,
+            "id": 6,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 0,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 02 neg diag",
+            "isAbsolute": 1,
+            "sourceRow": 8,
+            "id": 5,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 1,
+            "directionCol": 0,
+            "length": 3,
+            "name": "O Win 02 X vert",
+            "isAbsolute": 1,
+            "sourceRow": 8,
+            "id": 6,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": 1,
+            "sourceCol": 0,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 01 pos diag",
+            "isAbsolute": 1,
+            "id": 1,
+            "sourceRow": 3,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": 0,
+            "sourceCol": 3,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 10 X horiz",
+            "isAbsolute": 1,
+            "id": 6,
+            "sourceRow": 1,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": 0,
+            "sourceCol": 6,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 22 X horiz",
+            "isAbsolute": 1,
+            "sourceRow": 7,
+            "id": 6,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "col": 0,
+            "name": "PlaceO",
+            "isAbsolute": 0,
+            "id": 4,
+            "row": 0,
+            "type": "Place",
+            "player": 1
+        },
+        {
+            "directionRow": 0,
+            "sourceCol": 3,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 10 O horiz",
+            "isAbsolute": 1,
+            "id": 2,
+            "sourceRow": 1,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 7,
+            "directionCol": 0,
+            "length": 3,
+            "name": "O Win 22 X vert",
+            "isAbsolute": 1,
+            "sourceRow": 8,
+            "id": 6,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 7,
+            "directionCol": 0,
+            "length": 3,
+            "name": "O Win 20 X vert",
+            "isAbsolute": 1,
+            "id": 6,
+            "sourceRow": 2,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "col": 0,
+            "name": "PlaceX",
+            "isAbsolute": 0,
+            "row": 0,
+            "id": 0,
+            "type": "Place",
+            "player": 0
+        },
+        {
+            "directionRow": 0,
+            "sourceCol": 3,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 12 X horiz",
+            "isAbsolute": 1,
+            "sourceRow": 7,
+            "id": 6,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 7,
+            "directionCol": 0,
+            "length": 3,
+            "name": "X Win 22 O vert",
+            "isAbsolute": 1,
+            "id": 2,
+            "sourceRow": 8,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": 0,
+            "sourceCol": 6,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 20 O horiz",
+            "isAbsolute": 1,
+            "id": 2,
+            "sourceRow": 1,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": 1,
+            "sourceCol": 3,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 12 pos diag",
+            "isAbsolute": 1,
+            "id": 1,
+            "sourceRow": 6,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": 1,
+            "sourceCol": 0,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 01 pos diag",
+            "isAbsolute": 1,
+            "sourceRow": 3,
+            "id": 5,
+            "type": "PlaceRay",
+            "player": 1
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 0,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 01 neg diag",
+            "isAbsolute": 1,
+            "id": 1,
+            "sourceRow": 5,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 7,
+            "directionCol": 0,
+            "length": 3,
+            "name": "X Win 20 O vert",
+            "isAbsolute": 1,
+            "id": 2,
+            "sourceRow": 2,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": 0,
+            "sourceCol": 6,
+            "directionCol": 1,
+            "length": 3,
+            "name": "X Win 22 O horiz",
+            "isAbsolute": 1,
+            "id": 2,
+            "sourceRow": 7,
+            "type": "PlaceRay",
+            "player": 0
+        },
+        {
+            "directionRow": -1,
+            "sourceCol": 0,
+            "directionCol": 1,
+            "length": 3,
+            "name": "O Win 01 neg diag",
+            "isAbsolute": 1,
+            "sourceRow": 5,
+            "id": 5,
+            "type": "PlaceRay",
+            "player": 1
+        }
+    ],
+    "board": {
+        "pieceConfiguration": [
+            [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            [
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+            ]
+        ],
+        "shape": "rectangle",
+        "colorConfiguration": [
+            [
+                "0xffccccff",
+                "0xffccccff",
+                "0xffccccff",
+                "0xffffffff",
+                "0xffffffff",
+                "0xffffffff",
+                "0xffccccff",
+                "0xffccccff",
+                "0xffccccff"
+            ],
+            [
+                "0xffccccff",
+                "0xffccccff",
+                "0xffccccff",
+                "0xffffffff",
+                "0xffffffff",
+                "0xffffffff",
+                "0xffccccff",
+                "0xffccccff",
+                "0xffccccff"
+            ],
+            [
+                "0xffccccff",
+                "0xffccccff",
+                "0xffccccff",
+                "0xffffffff",
+                "0xffffffff",
+                "0xffffffff",
+                "0xffccccff",
+                "0xffccccff",
+                "0xffccccff"
+            ],
+            [
+                "0xffffffff",
+                "0xffffffff",
+                "0xffffffff",
+                "0xffccccff",
+                "0xffccccff",
+                "0xffccccff",
+                "0xffffffff",
+                "0xffffffff",
+                "0xffffffff"
+            ],
+            [
+                "0xffffffff",
+                "0xffffffff",
+                "0xffffffff",
+                "0xffccccff",
+                "0xffccccff",
+                "0xffccccff",
+                "0xffffffff",
+                "0xffffffff",
+                "0xffffffff"
+            ],
+            [
+                "0xffffffff",
+                "0xffffffff",
+                "0xffffffff",
+                "0xffccccff",
+                "0xffccccff",
+                "0xffccccff",
+                "0xffffffff",
+                "0xffffffff",
+                "0xffffffff"
+            ],
+            [
+                "0xffccccff",
+                "0xffccccff",
+                "0xffccccff",
+                "0xffffffff",
+                "0xffffffff",
+                "0xffffffff",
+                "0xffccccff",
+                "0xffccccff",
+                "0xffccccff"
+            ],
+            [
+                "0xffccccff",
+                "0xffccccff",
+                "0xffccccff",
+                "0xffffffff",
+                "0xffffffff",
+                "0xffffffff",
+                "0xffccccff",
+                "0xffccccff",
+                "0xffccccff"
+            ],
+            [
+                "0xffccccff",
+                "0xffccccff",
+                "0xffccccff",
+                "0xffffffff",
+                "0xffffffff",
+                "0xffffffff",
+                "0xffccccff",
+                "0xffccccff",
+                "0xffccccff"
+            ]
+        ],
+        "width": 9,
+        "activePlayer": 0,
+        "height": 9
+    }
+}
