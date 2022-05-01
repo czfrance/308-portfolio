@@ -73,7 +73,6 @@ public class GameControlPanel extends ControlPanel {
     createButtons(language);
   }
 
-
   //creates all the buttons in the given panel and adds to the root
   @Override
   protected void createButtons(String language) {
@@ -83,7 +82,6 @@ public class GameControlPanel extends ControlPanel {
     pause = new PauseButton(language, setPauseButton);
     save = new SaveButton(language, setSaveButton);
     root.getChildren().addAll(home, restart, undo, pause, save);
-
   }
 
   //method to undo a move in the game
