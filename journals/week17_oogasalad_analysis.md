@@ -308,8 +308,7 @@ Needs Improvement Design: The design that needs improvement is Game class
   * I don't think the design is bad per say, but I don't think the class is properly 
     named. The name `Game` class implies that it should encapsulate more than just resetting the
     the game and going forward and backward in the game.
-
-
+  
 
 ## Your Design
 
