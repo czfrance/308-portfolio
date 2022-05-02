@@ -280,119 +280,322 @@ developed.
 ### Feature Design Examples
 
 #### Good Example **teammate** implemented
-
+Good Design: Thivya's configure in builder view
 * Design
+  * In the configure package, there are three classes:
+    * `FormatDropDown`: Extends ComboBox. Getting the items in the dropdown as well as setting the
+      format of the dropdown are all encapsulated within the class.
+    * `SettingsView`: Interface that defines a popup. Makes a stage and sets up the stage
+    * `SettingsWindow`: Implements `SettingsView` interface. Creates the Settings popup as well as
+      all the elements in the settings tab. All the methods for creating the settings popup, the 
+      stage, settings the theme and font are all encapsulated in this class.
+      * We assume that the theme and font exist.
 
 * Evaluation
+  * I think the design of this feature is good. The elements that make up each aspect of the Settings
+    window is broken up into manageable, single-responsibility elements, including the combo box. 
+  * I appreciated the SettingsView interface, as it allows for further abstractions and extensions 
+    to be implemented further on, for example if we wanted to make a different type of pop up, it 
+    would be very easy to implement the SettingsView interface and abstract.
 
 
 #### Needs Improvement Example **teammate** implemented
-
+Needs Improvement Design: The design that needs improvement is Game class
 * Design
+  * The Game class extends the Observable class. It is used by the Controller.
 
 * Evaluation
-
+  * I don't think the design is bad per say, but I don't think the class is properly 
+    named. The name `Game` class implies that it should encapsulate more than just resetting the
+    the game and going forward and backward in the game.
 
 
 
 ## Your Design
 
 ### Assumption or choice that had a global or significant impact on your design
+One assumption about the assignment is that all changes made in a certain window should be reflected
+in the entire application. I made this assumption because in a game, these controls (ie theme, 
+mouse sounds) do not control a certain game, but the entire application. This impacted the way in
+which I created, changed and updated the aspects of the game, especially the theme.
 
+For the theme, I had to keep track of all the scenes and stages of the application and go back 
+to update the theme in each of the scenes. This impacted the place in which the function was located.
 
 ### Design Challenges
 
 #### Design #1
+First design consideration: location of theme change
 
 * Trade-offs
+  * As currently implemented, the theme is changed in the viewManager. This is mainly due to an 
+    assumption that I made that I talked about earlier: assumption about the assignment is that all changes made in a certain window should be reflected
+    in the entire application. I made this assumption because in a game, these controls (ie theme,
+    mouse sounds) do not control a certain game, but the entire application. This impacted the way in
+    which I created, changed and updated the aspects of the game, especially the theme.
+  * Thus, to change the theme of each individual window of the application (necessary in order
+    to play multiple games at the same time), the theme change function had to be located in the 
+    ViewManager, as that is where all the scenes and stages of the game are created and kept 
+    track of.
+  * This allows for the assumption to be properly taken care of. However, I dislike how a button 
+    who is in such a branched stage/part of the hierarchy is being executed in essentially what is the
+    root of the entire application. It feels wrong to have to pass either this function or the button
+    through so many levels of the program.
 
 * Alternate designs
+  * Alternatively, I could ignore my assumption and only change the theme of the window that the 
+    game is currently on. This means that only the window in which the player selected the theme
+    change would experience the theme change.
+  * This would fit better with the rule that higher classes should not depend on lower
+    classes. However, this does not make sense game-design-wise. I feel that if a 
+    user were to indicate a theme change, they would expect it to happen throughout
+    all of the windows.
 
 * Solution
+  * As a solution, I went along with my assumption and had the function be executed
+    in the ViewManager. To try to have better design, I opted to pass the function
+    through to the place where the button was created rather than having several
+    getters throughout several classes in order to pass the theme change button
+    all the way back to the ViewManager.
 
 * Satisfaction (Justification or Suggestion)
-
+  * Although I am not completely satisfied with this decision, I do think it was 
+    the best decision and cannot do any better, Any other solution would have 
+    resulted in losses in design in other ways.
 
 #### Design #2
+Second design consideration: Another design consideration that I had to wrestle with
+was regarding popup menu. 
 
 * Trade-offs
+  * In order for the full effect of the popup to take place, there are two things 
+    that need to happen. First, a Gaussian Blur has to put on the current stage. This
+    renders the stage uneditable. The second step is to create the popup menu, which 
+    is a transparent stage with a box displaying some sort of message.
+  * The tradeoff/deliberation comes from where to implement the Gaussian Blur in 
+    relation to where the popup stage is created.
+  * Currently, the Gaussian Blur is applied in the `GameView`, the same place where
+    the popup view is created.
 
 * Alternate designs
+  * Alternatively, the stage that the Blur should evoked on could be passed into the
+    popup view and the Blur applied to the stage when the popup is created, in the
+    popup view constructor. However, this would entail passing the stage into the
+    popup view, so there is a chance that it can be used maliciously for other 
+    purposes
 
 * Solution
+  * The solution I went with was the design currently in place. The Blur is applied 
+    in the GameView, and then the popup view constructor is called.
 
 * Satisfaction (Justification or Suggestion)
+  * I am satisfied with this decision. I think that this is the best way to keep
+    the design encapsulated while having the best design possible.
 
 
 
 ### Design Pattern
 
 * Design problem applied to
+  * I used the `SelectorFactory` and `AIPLayerFactory` class in my program.
 
 * Classes and methods that implement it
+  * The `AIPLayerFactory` class implements the `SelectorFactory`, and the `PlayerFactory`
+    implements `AIPLayerFactory`. 
 
 * How it helped your design
+  * This helped my design by making it more streamlined and easy to use. My part of 
+    the code used the AIPlayerFactory in order to implement one player games (playing)
+    against an AI in a 2+ player game. This helped my design be much more simplistic
+    and easy to read.
 
 
 
 ### Abstraction Examples
 
 #### Example #1
+The first example is a series of abstractions: `Popup`/`SettingsView`/`SettingsEntry`
 
 * Classes/Interfaces included in abstraction
+  * The classes that are included in this abstraction include:
+    * `PopupView`
+    * `MessageView`
+    * `SettingsView`
+    * `SettingsHeader`
+    * `SettingsEntry`
+    * `EntryText`
+    * `MouseSoundEntry`
+    * `ThemeSoundEntry`
 
 * Design goal
+  * The goal of my design was to make it as abstract as possible, making sure that 
+    it is easy to extend the abstract classes in order to ensure that any further extensions
+    are easy to implement and easy to incorportate into the program.
+  * It also follows the Liskov substitution principle. Subclasses that extend the parent
+    class are able to be substituted for the parent class.
 
 * How it helps
+  * This helps my design by making it very streamlined and easy to read. It follows the open-closed
+    principle in that the parent class is open to extension but closed to modification, as seen
+    in the many examples that I demonstrated in the program. 
+  * In addition, my code follows the Liskov substitution principle, so it will make it easier
+    in the future to change the code.
+  * Finally, abstracting these classes makes my code flow much better and look a lot more clear.
 
 
-#### Example #1
+#### Example #2
+The second example is my refactored code in my analysis, the `ControlPanel` and `ControlButton` 
+packages
 
 * Classes/Interfaces included in abstraction
+  * The classes that are included in this abstraction include:
+    * `ControlPanel`
+      * `GameControlPanel`
+      * `SettingsControlPanel`
+    * `ControlButton`
+      * `HomeButton`
+      * `InfoButton`
+      * `PauseButton`
+      * `RestartButton`
+      * `SaveButton`
+      * `SettingsButton`
+      * `UndoButton`
 
 * Design goal
+  * The goal of my design was to make it as abstract as possible, making sure that
+    it is easy to extend the abstract classes in order to ensure that any further extensions
+    are easy to implement and easy to incorportate into the program.
+  * It also follows the Liskov substitution principle. Subclasses that extend the parent
+    class are able to be substituted for the parent class.
 
 * How it helps
-
+  * This helps my design by making it very streamlined and easy to read. It follows the open-closed
+    principle in that the parent class is open to extension but closed to modification, as seen
+    in the many examples that I demonstrated in the program.
+  * In addition, my code follows the Liskov substitution principle, so it will make it easier
+    in the future to change the code.
+  * Finally, abstracting these classes makes my code flow much better and look a lot more clear.
+  * In addition, my code incorporated the use of lamdas, so everything is closed: nothing (ie
+    buttons, Text, etc) is shared with the rest of the program. Instead, functions in the form of
+    Runnables, Suppliers, and Consumers are shared.
+    
+  
 
 
 ### Feature Design Examples
+my refactored code in my analysis, the `ControlPanel` and `ControlButton` packages
 
 #### Good Example **you** implemented
 
 * Design
+  * The design of the feature, the control panel, is split up into two abstract classes: the 
+    actual control panel class and the control button class, which are the buttons that make up 
+    each control panel class.
+  * The subclasses that extend off of the control panel are the actual panels, while the 
+    button subclasses that extend off of ControlButton are the actual buttons in the actual 
+    ControlPanels. 
+  * In order to set the actions of the buttons, runnables, suppliers, and consumers are used to 
+    to pass the functions along.
 
 * Evaluation
+  * I think the design of this feature is good. The goal of my design was to make it as abstract as possible, making sure that
+    it is easy to extend the abstract classes in order to ensure that any further extensions
+    are easy to implement and easy to incorportate into the program.
+  * It also follows the Liskov substitution principle. Subclasses that extend the parent
+    class are able to be substituted for the parent class.
+  * This helps my design by making it very streamlined and easy to read. It follows the open-closed
+      principle in that the parent class is open to extension but closed to modification, as seen
+      in the many examples that I demonstrated in the program.
+  * In addition, my code follows the Liskov substitution principle, so it will make it easier
+    in the future to change the code.
+  * Finally, abstracting these classes makes my code flow much better and look a lot more clear.
+  * In addition, my code incorporated the use of lamdas, so everything is closed: nothing (ie
+    buttons, Text, etc) is shared with the rest of the program. Instead, functions in the form of
+    Runnables, Suppliers, and Consumers are shared.
 
 
 #### Needs Improvement Example **you** implemented
+The `BoardView` class is a class that needs a lot of improvement
 
 * Design
+  * There really isn't too much design in this class. It ended being a dumping ground for the 
+    code that generally related to the movement of pieces, but we didn't know what to do with 
+    it/where to put it. The BoardView is created in the GameView class, but operates essentially
+    operates seperate of the GameView class.
 
 * Evaluation
+  * The design of this class is really bad. As I stated before, it is a dumping ground of code,
+    so it breaks the single responsibility principle on all levels. In addition, there isn't
+    any abstraction, although it could benefit from a lot of abstraction and use of lambdas.
+  * In general, the class is hard to read and ugly, and any extensions or additions to the 
+    project/application would either result in making the class even longer and thus more 
+    confusing and hard to read, or require lots of changes.
 
 
 
 ## Conclusions
 
 #### Thing #1 you have done to improve as a coder/designer
+* Over the semester, something that I've done to improve as a coder/designer is plan out what 
+  I'm going to code. It started only when I was forced to make the plans in the CS 308 projects.
+  Before this, I would go in and start coding with an idea in my head and see what would 
+  result. Usually this worked, but it would result in very messy code that wasn't very coherent 
+  at all. In addition, this system wouldn't work for working in a team, as there needs to be a plan 
+  put in place for the team in order to get started and use the APIs put in place.
 
-#### Thing #1 you have done to improve as a coder/designer
-
+#### Thing #2 you have done to improve as a coder/designer
+* Another thing that I've done to improve as a coder/designer is to communicate more with my
+  group. I think it is a necessary thing to do in order to work in a group. If there was no 
+  communication or no proper communication between the team, then the workflow would break 
+  down and the entire project would fall apart. This happened in my first group project, 
+  and I was stuck doing all of the work because my teammates were not working and were not
+  communicating with me properly.
 
 #### Thing #1 you have done to improve your teamwork or to be a better teammate
+* One thing that I've done to improve my teamwork is to communicate more with my
+  group. I think it is a necessary thing to do in order to work in a group. If there was no
+  communication or no proper communication between the team, then the workflow would break
+  down and the entire project would fall apart. This happened in my first group project,
+  and I was stuck doing all of the work because my teammates were not working and were not
+  communicating with me properly.
 
-#### Thing #1 you have done to improve your teamwork or to be a better teammate
-
+#### Thing #2 you have done to improve your teamwork or to be a better teammate
+* Another thing that I've done to improve my teamwork is to be participate more in group 
+  discussions. At the beginning of the semester, it was less of not participating and more 
+  of the discussions not existing. As the semester went on, our teams got better at communication
+  and thus having discussions. As the number of dicussions increased, of course I participated
+  more.
 
 #### Thing #1 you have done this semester to improve how you manage "large", ambiguous, open ended projects
+* One thing that I've done to improve how I manage large projects is to communicate more with my
+  group. I think it is a necessary thing to do in order to work in a group. If there was no
+  communication or no proper communication between the team, then the workflow would break
+  down and the entire project would fall apart. This happened in my first group project,
+  and I was stuck doing all of the work because my teammates were not working and were not
+  communicating with me properly.
 
 #### Thing #2 you have done this semester to improve how you manage "large", ambiguous, open ended projects
-
+* Another thing that I've done to improve how I manage large projects is to be participate more in group
+  discussions. At the beginning of the semester, it was less of not participating and more
+  of the discussions not existing. As the semester went on, our teams got better at communication
+  and thus having discussions. As the number of dicussions increased, of course I participated
+  more.
 
 #### Biggest strength #1 as a coder/designer?
+* One of my biggest strengths as a coder/designer is my work ethic and stubbornness. I don't like to leave things
+  unfinished, so I will often work until the goal that I set out for myself I reached. I am
+  very passionate about what I do, and when that is the case, I will dedicate as much time
+  into the project as needed until the result is something I am satisfied and can be proud
+  of.
 
 #### Biggest strength #2 as a coder/designer?
-
+* Another of my biggest strengths as a coder/designer is my ability to understand code quickly. I 
+  think this is something very important as you are not the only person working on the project,
+  so it is important to be able to read and understand other teammates' code quickly and efficiently,
+  and then build upon it and use it in your own code.
 
 #### Favorite part of working on "large" team software project
+* My favorite part of working on large team software projects is that you are able to depend on
+  other people. This way, you don't have to worry about every single aspect of the project
+  and you don't have to think about and fully comprehend how every part works. You can choose to
+  place your trust in your teammates and know that they will eventually get the work done.
